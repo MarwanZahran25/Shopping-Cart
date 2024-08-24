@@ -1,4 +1,4 @@
-import StarIcon from "../components/starIcon";
+import StarIcon from "../components/StarIcon";
 import Addtocartbtn from "./Addtocartbtn";
 
 export default function ProductCard({ product, onclick, isAdded }) {
