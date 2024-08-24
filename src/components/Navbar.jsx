@@ -4,7 +4,7 @@ import Carticon from "./Carticon";
 import { Link } from "react-router-dom";
 export default function Navbar({ products = 0 }) {
   return (
-    <nav className="w-full bg-red-600 text-white px-2 font-bold flex lg:flex-row md:flex-row flex-col lg:justify-between py-5 gap-3 lg:px-20 sticky   shadow-lg ">
+    <nav className="w-full bg-red-600 text-white px-2 font-bold flex lg:flex-row md:flex-row flex-col md:justify-between lg:justify-between py-5 gap-3 lg:px-20 sticky   shadow-lg ">
       <Link to={"/"}>
         <div className="text-4xl text-center font-serif ">Zahran</div>
       </Link>
