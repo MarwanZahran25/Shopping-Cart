@@ -6,11 +6,12 @@ export default function Cart() {
   const [cart, setCart, cartIds, setCartIds, cartTotal, setCartTotal] =
     useOutletContext();
 
-  const sum = Math.round(
-    cartTotal.reduce((previous, current) => {
-      return previous + current.price * current.quantity;
-    }, 0)
-  );
+  const sum =
+    Math.floor(
+      cartTotal.reduce((previous, current) => {
+        return previous + current.price * current.quantity;
+      }, 0) * 10
+    ) / 10;
 
   return (
     <div className="grid grid-cols-[1fr,300px] justify-center">
@@ -76,7 +77,9 @@ export default function Cart() {
         <button
           className="bg-black rounded-md text-white font-semibold py-1 px-3"
           onClick={() => {
-            alert("thank you for using our fake store");
+            alert(
+              `thank you for using our fake store you are order of ${sum}$ was NOT submited because this is NOT real store`
+            );
 
             setCart([]);
             setCartIds([]);
