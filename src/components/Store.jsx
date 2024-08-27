@@ -3,7 +3,8 @@ import { useOutletContext } from "react-router-dom";
 
 import ProductCard from "./ProductCard";
 export default function Store() {
-  const [cart, setCart, cartIds, setCartIds] = useOutletContext();
+  const [cart, setCart, cartIds, setCartIds, cartTotal, setCartTotal] =
+    useOutletContext();
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -25,11 +26,14 @@ export default function Store() {
             product={item}
             key={index}
             onclick={() => {
+              console.log(`cart total is ${cartTotal}`);
               setCartIds([...cartIds, item.id]);
               setCart((prevCart) => {
                 const newCart = [...prevCart, items[index]];
-                console.log(newCart);
                 return newCart;
+              });
+              setCartTotal((prev) => {
+                return [...prev, { ...items[index], quantity: 1 }];
               });
             }}
             isAdded={cartIds.includes(item.id) ? true : false}

@@ -3,20 +3,14 @@ import Cartproduct from "./Cartproduct";
 import { useOutletContext } from "react-router-dom";
 
 export default function Cart() {
-  const [cart, setCart, cartIds, setCartIds] = useOutletContext();
-  const [cartTotal, setCartTotal] = useState([]);
-  const [needUpdate, setNeedUpdate] = useState(false);
-  useEffect(() => {
-    const cartTotals = cart.map((item) => {
-      return { ...item, quantity: 1 };
-    });
+  const [cart, setCart, cartIds, setCartIds, cartTotal, setCartTotal] =
+    useOutletContext();
 
-    setCartTotal(cartTotals);
-  }, [needUpdate]);
-
-  const sum = cartTotal.reduce((previous, current) => {
-    return previous + current.price * current.quantity;
-  }, 0);
+  const sum = Math.round(
+    cartTotal.reduce((previous, current) => {
+      return previous + current.price * current.quantity;
+    }, 0)
+  );
 
   return (
     <div className="grid grid-cols-[1fr,300px] justify-center">
@@ -86,7 +80,7 @@ export default function Cart() {
 
             setCart([]);
             setCartIds([]);
-            setNeedUpdate(true);
+            setCartTotal([]);
           }}
         >
           Checkout

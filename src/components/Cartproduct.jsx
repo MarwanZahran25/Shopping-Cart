@@ -6,7 +6,7 @@ export default function Cartproduct({
   handlePlus,
   handleMinus,
 }) {
-  const [count, setCount] = useState(1);
+  const count = product.quantity;
 
   return (
     <div className="flex rounded-md shadow-lg font-bold  p-5 justify-around gap-7 w-96 ">

@@ -7,10 +7,14 @@ import { Outlet } from "react-router-dom";
 function App() {
   const [cart, setCart] = useState([]);
   const [cartIds, setCartIds] = useState([]);
+  const [cartTotal, setCartTotal] = useState([]);
+
   return (
     <div className="relative min-h-screen">
       <Navbar products={cart.length} />
-      <Outlet context={[cart, setCart, cartIds, setCartIds]} />
+      <Outlet
+        context={[cart, setCart, cartIds, setCartIds, cartTotal, setCartTotal]}
+      />
       <Footer />
     </div>
   );
