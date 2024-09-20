@@ -1,17 +1,22 @@
-import { useState, useEffect } from "react";
+/* eslint-disable no-unused-vars */
+import { useMemo } from "react";
 import Cartproduct from "./Cartproduct";
+
 import { useOutletContext } from "react-router-dom";
 
 export default function Cart() {
   const [cart, setCart, cartIds, setCartIds, cartTotal, setCartTotal] =
     useOutletContext();
 
-  const sum =
-    Math.floor(
-      cartTotal.reduce((previous, current) => {
-        return previous + current.price * current.quantity;
-      }, 0) * 10
-    ) / 10;
+  const sum = useMemo(() => {
+    return (
+      Math.floor(
+        cartTotal.reduce((previous, current) => {
+          return previous + current.price * current.quantity;
+        }, 0) * 10
+      ) / 10
+    );
+  }, [cartTotal]);
 
   return (
     <div className="grid grid-cols-[1fr,300px] justify-center">

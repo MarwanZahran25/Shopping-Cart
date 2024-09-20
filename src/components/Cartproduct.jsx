@@ -9,7 +9,7 @@ export default function Cartproduct({
   const count = product.quantity;
 
   return (
-    <div className="flex rounded-md shadow-lg font-bold  p-5 justify-around gap-7 w-96 ">
+    <div className="flex lg:flex-row sm:flex-col rounded-md shadow-lg font-bold  p-5 justify-around gap-7 w-96 ">
       <div className="flex flex-col justify-around h-full gap-3">
         <h1>{product.title}</h1>
         <h1>{`${product.price} $`}</h1>

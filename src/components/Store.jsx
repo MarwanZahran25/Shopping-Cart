@@ -14,7 +14,7 @@ export default function Store() {
       setItems(products);
     }
     fetchItems();
-    console.log(items);
+   
   }, []);
 
   return (

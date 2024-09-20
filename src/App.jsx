@@ -10,7 +10,7 @@ function App() {
   const [cartTotal, setCartTotal] = useState([]);
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen  w-screen">
       <Navbar products={cart.length} />
       <Outlet
         context={[cart, setCart, cartIds, setCartIds, cartTotal, setCartTotal]}
