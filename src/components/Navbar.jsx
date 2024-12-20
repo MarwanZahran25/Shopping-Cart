@@ -4,7 +4,7 @@ import Carticon from "./Carticon";
 import { Link } from "react-router-dom";
 export default function Navbar({ products = 0 }) {
   return (
-    <nav className="w-full bg-red-600 text-white px-2 font-bold flex lg:flex-row md:flex-row flex-col md:justify-between lg:justify-between py-5 gap-3 lg:px-20 sticky   shadow-lg ">
+    <nav className="w-full bg-black text-white px-2 font-bold flex lg:flex-row md:flex-row flex-col md:justify-between lg:justify-between py-5 gap-3 lg:px-20 sticky   shadow-lg ">
       <Link to={"/"}>
         <div className="text-4xl text-center font-serif ">Zahran</div>
       </Link>
@@ -19,7 +19,7 @@ export default function Navbar({ products = 0 }) {
           <Link to={"/cart"}>
             <li className="relative">
               <Carticon />
-              <p className="bg-black rounded-full absolute px-2 top-0 text-lg left-5">
+              <p className="bg-red-500 rounded-full absolute px-2 top-0 text-lg left-5">
                 {products}
               </p>
             </li>

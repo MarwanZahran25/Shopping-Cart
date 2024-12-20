@@ -1,14 +1,16 @@
+/* eslint-disable react/prop-types */
 import StarIcon from "../components/StarIcon";
 import Addtocartbtn from "./Addtocartbtn";
 
 export default function ProductCard({ product, onclick, isAdded }) {
   return (
-    <div className="max-w-[300px] shadow-xl -2 border-gray-300 rounded-sm p-4 flex flex-col items-center justify-between  gap-2 font-semibold">
+    <div className="max-w-[300px] shadow-2xl  border-gray-300 rounded-lg p-4 flex flex-col items-center justify-between  gap-2 font-semibold">
       <img
         src={product.image}
         alt={product.title}
-        height="auto"
-        className="w-40"
+        width='auto'
+        
+        className="w-40 h-56"
       />
       <h1>{product.title}</h1>
       <ul className="flex self-start gap-3">

@@ -7,7 +7,7 @@ export default function Home() {
         Everything You Need And <br />
         <Link
           to={"/shop"}
-          className="text-center font-extrabold text-yellow-600 flex justify-center "
+          className="text-center font-extrabold text-red-600 flex justify-center "
         >
           More
         </Link>
